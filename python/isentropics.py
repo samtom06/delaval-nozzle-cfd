@@ -78,7 +78,7 @@ def print_case(r):
     print(f"Exit Velocity: {r['exit_velocity']:.1f} m/s")
     print(f"Throat Temp: {r['T_throat']:.1f} K")
     print(f"Throat Pressure: {r['P_throat']:.0f} Pa")
-    print(f"Specific Impulse: {r['Isp']:.1f} s")
+    print(f"Ideal Specific Impulse: {r['Isp']:.1f} s")
     print(f"Regime: {r['regime']}")
 
 cases = [
