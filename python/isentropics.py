@@ -82,9 +82,9 @@ def print_case(r):
     print(f"Regime: {r['regime']}")
 
 cases = [
-    run_case(1.6875, 1.4, 500000, 3000, 101325, "Sea Level (101,325 Pa)"),
-    run_case(1.6875, 1.4, 500000, 3000, 63902, "Design Altitude (63,902 Pa)"),
-    run_case(1.6875, 1.4, 500000, 3000, 20000, "High Altitude (20,000 Pa)")
+    run_case(4.0, 1.4, 500000, 3000, 101325, "Sea Level (101,325 Pa): over-expanded"),
+    run_case(4.0, 1.4, 500000, 3000, 14893, "Design Altitude (14,893 Pa): ideally expanded"),
+    run_case(4.0, 1.4, 500000, 3000, 5000, "High Altitude (20,000 Pa): under-expanded")
 
 ]
 
@@ -92,12 +92,12 @@ for c in cases:
     print_case(c)
 
 print("~~~ Validation Checks ~~~")
-print(f"Area Ratio at M=2: {area_ratio(2, 1.4):.4f}")
-print(f"Mach from area ratio 1.6875: {solve_mach_from_area(1.6875, 1.4):.3f}")
-print(f"Stagnation Temp Ratio: {stagnation_temp_ratio(2.0, 1.4):.3f}")
-print(f"Stagnation Pressure Ratio: {stagnation_pressure_ratio(2.0, 1.4):.3f}")
-print(f"Stagnation Density Ratio: {stagnation_density_ratio(2.0, 1.4):.3f}")
-print(f"Section at M=2: {nozzle_section(area_ratio(2, 1.4))}")
+print(f"Area Ratio at M = 2.94: {area_ratio(2.94, 1.4):.4f}")
+print(f"Mach from area ratio 4.0: {solve_mach_from_area(4.0, 1.4):.3f}")
+print(f"Stagnation Temp Ratio: {stagnation_temp_ratio(2.94, 1.4):.3f}")
+print(f"Stagnation Pressure Ratio: {stagnation_pressure_ratio(2.94, 1.4):.3f}")
+print(f"Stagnation Density Ratio: {stagnation_density_ratio(2.94, 1.4):.3f}")
+print(f"Section at M = 2.94: {nozzle_section(area_ratio(2.94, 1.4))}")
 
 mach_values = np.linspace (1.05, 5, 200)
 area_values = [area_ratio(M, 1.4) for M in mach_values]
@@ -109,7 +109,7 @@ plt.plot(mach_sub, area_sub, 'b-')
 plt.plot(mach_values, area_values)
 plt.xlabel("Mach"), plt.ylabel("A/A*"), plt.title("Area vs. Mach Curve")
 plt.grid(True)
-plt.plot(2.0, 1.6875, 'ro')
+plt.plot(2.94, area_ratio(2.94, 1.4), 'ro')
 plt.show()
 
 """
@@ -120,6 +120,3 @@ as engineers. Validating it against theory and seeing it be correct
 (after much trial and error) was extremely gratifying haha.
 
 """
-
-
-
