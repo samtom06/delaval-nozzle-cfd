@@ -4,9 +4,9 @@
 A De Laval (converging-diverging) rocket nozzle designed in SolidWorks and simulated using 2D axisymmetric CFD in ANSYS Fluent. A single fixed geometry at area ratio 4.0 runs at three back-pressures to produce the three classic operating regimes: under-expanded, ideally expanded (design), and over-expanded. Exit Mach number, static pressure, and static temperature are validated against 1D isentropic flow theory.
 
 ## Resume Bullets
-- Designed an area-ratio-4.0 De Laval nozzle with a Mach 2.94 design exit in SolidWorks and ran 2D axisymmetric density-based CFD in ANSYS Fluent on a 12,500-cell low-y+ mesh at 0.48 minimum orthogonal quality
-- Validated exit Mach, pressure, and temperature against 1D isentropic theory within 4 percent across 3 back-pressure regimes from 5,000 to 70,000 Pa, automating the isentropic area-Mach solver in Python with a Brent root-finder
-- Resolved an internal shock with 32 percent exit-area flow separation in the over-expanded case using the k-omega SST model
+- Designed an area-ratio-4.0 De Laval nozzle in SolidWorks; ran 2D axisymmetric density-based CFD in ANSYS Fluent on a 12,500-cell low-y+ mesh
+- Validated exit Mach, pressure, and temperature against isentropic theory within 4% across 3 back-pressure regimes; automated the solver in Python with Brent root-finding
+- Resolved an internal shock with 32% flow separation in the over-expanded case using k-omega SST turbulence modelingusing the k-omega SST model
 
 ## Design Point
 | Parameter | Value |
