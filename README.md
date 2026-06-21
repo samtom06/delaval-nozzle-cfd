@@ -53,7 +53,7 @@ Each contour is mirrored about the axis to show the full nozzle.
 
 **Design condition (14,893 Pa).** Smooth monotonic acceleration through the throat to a core exit Mach near 3.0, with no internal discontinuity, confirming ideally expanded flow.
 
-![Design Mach contour](results/mach_design_conditions.png)
+![Design Mach contour](results/mach_design.png)
 
 **Over-expanded condition (70,000 Pa).** The higher back-pressure forces a shock into the diverging section. The flow expands supersonically, decelerates across the shock, and separates along the walls, dropping the area-averaged exit Mach to 2.42.
 
